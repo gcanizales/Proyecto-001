@@ -16,6 +16,82 @@
 
 <body>
   <h1>Sistema de gestión de activos: Control de entrada y salida</h1>
-</body>
-
+  <form method="POST" action="registrar_movimiento.php">
+  <fieldset>
+    <legend>Registro de Movimiento</legend>
+    <div>
+      <label for="folio">Número de Folio:</label>
+      <input type="text" id="folio" name="folio" required>
+    </div>
+    <div>
+      <label for="tipo">Tipo de Movimiento:</label>
+      <select id="tipo" name="tipo">
+        <option value="entrada">Entrada</option>
+        <option value="salida">Salida</option>
+      </select>
+    </div>
+    <div>
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required>
+      <label for="hora">Hora:</label>
+      <input type="time" id="hora" name="hora" required>
+    </div>
+    <div>
+      <label for="unidad">Casa:</label>
+      <select id="unidad" name="unidad">
+        <option value="unidad1">Unidad 1</option>
+        <option value="unidad2">Unidad 2</option>
+        <option value="unidad3">Unidad 3</option>
+        <option value="unidad4">Unidad 4</option>
+        <option value="unidad5">Unidad 5</option>
+        <option value="unidad6">Unidad 6</option>
+        <option value="unidad7">Unidad 7</option>
+      </select>
+    </div>
+    <div>
+      <label for="inventario">Número de Inventario:</label>
+      <input type="text" id="inventario" name="inventario" required>
+    </div>
+    <div>
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" name="descripcion" rows="3" cols="30" required></textarea>
+    </div>
+    <div>
+      <label for="motivo">Motivo:</label>
+      <select id="motivo" name="motivo">
+        <option value="mantenimiento">Mantenimiento</option>
+        <option value="prestamo">Préstamo</option>
+        <option value="traslado">Traslado</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+    <div>
+      <label for="solicitante">Solicitante:</label>
+      <input type="text" id="solicitante" name="solicitante" required>
+    </div>
+    <div>
+      <label for="area_solicitante">Área de Adscripción:</label>
+      <input type="text" id="area_solicitante" name="area_solicitante" required>
+    </div>
+    <div>
+      <label for="receptor">Personal que Recibe:</label>
+      <input type="text" id="receptor" name="receptor" required>
+    </div>
+    <div>
+      <label for="area_receptor">Área de Adscripción:</label>
+      <input type="text" id="area_receptor" name="area_receptor" required>
+    </div>
+    <div>
+      <label for="autorizado_por">Personal que Autoriza el Traslado:</label>
+      <input type="text" id="autorizado_por" name="autorizado_por" required>
+    </div>
+    <div>
+      <label for="observaciones">Observaciones:</label>
+      <textarea id="observaciones" name="observaciones" rows="3" cols="30"></textarea>
+    </div>
+    <div>
+      <input type="submit" value="Registrar Movimiento">
+    </div>
+  </form>
+ </body>
 </html>
