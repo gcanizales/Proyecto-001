@@ -29,18 +29,48 @@
   <label for="folio">Número de Folio:</label>
   <input type="text" id="folio" name="folio" value="" readonly>
 </div>
+    <!--
 <script>
-  // Obtener el nombre de la unidad (puedes cambiar "Nombre de la Unidad" por el nombre correspondiente)
+   // Obtener el nombre de la unidad (puedes cambiar "Nombre de la Unidad" por el nombre correspondiente)
   const unidad = "Nombre de la Unidad";
-  
+    
   // Obtener el número consecutivo del formulario (se puede almacenar en una variable o en una base de datos)
   const numeroConsecutivo = 1; // Ejemplo: el primer formulario
-  
+    
   // Generar el número de folio con el formato adecuado
   const folio = `${unidad}-${numeroConsecutivo}`;
-  
+    
   // Asignar el valor del número de folio al input correspondiente
   document.getElementById("folio").value = folio;
+</script>
+    -->
+<script>
+  // Obtener el elemento select de la unidad
+const unidadSelect = document.getElementById("unidad");
+
+// Obtener el valor seleccionado del select
+const unidadValue = unidadSelect.value;
+
+// Obtener el número consecutivo del formulario
+// Aquí deberás implementar la lógica para generar el número consecutivo
+const consecutivo = obtenerNumeroConsecutivo();
+
+// Generar el número de folio
+const folio = `${unidadValue}-${consecutivo}`;
+
+// Asignar el valor del número de folio al input correspondiente
+document.getElementById("folio").value = folio;
+  
+// Variable global para almacenar el número consecutivo del formulario
+let numeroConsecutivo = 1;
+
+// Función para obtener el número consecutivo del formulario
+function obtenerNumeroConsecutivo() {
+  const consecutivo = numeroConsecutivo.toString().padStart(3, "0");
+  numeroConsecutivo++;
+  return consecutivo;
+}
+
 </script>
     <div>
       <label for="tipo">Tipo de Movimiento:</label>
