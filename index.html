@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+  
 <head>
   <title>Sistema de gestión de activos: Control de entrada y salida</title>
   <!--El elemento <link> define la relación entre el documento actual y un recurso externo-->
   <link rel="stylesheet" href="css/styles.css">
+  <!--El elemento HTML Script ( <script> ) se utiliza para insertar o hacer referencia a un script ejecutable dentro de un documento HTML o XHTML-->
+  <script src="js/validacion_formulario.js"></script>
+  <script src="js/interaccion_formulario.js"></script>
   <!--Juego de caracteres utilizado-->
   <meta charset="UTF-8">
   <!--Descripción de la página web-->
@@ -19,36 +23,10 @@
   <form method="POST" action="registrar_movimiento.php" onsubmit="return validarFormulario()">
   <fieldset>
     <legend>Registro de Movimiento</legend>
-    
-    <!--
-    <div>
-      <label for="folio">Número de Folio:</label>
-      <input type="text" id="folio" name="folio" required>
-    </div>
-    -->
     <div>
     <label for="folio">Folio:</label>
     <input type="text" id="folio" name="folio" value="">
     </div>
-<script>
-  // Obtener la fecha y hora actual
-const fecha = new Date();
-const anio = fecha.getFullYear().toString().substr(-2);
-const mes = ('0' + (fecha.getMonth() + 1)).slice(-2);
-const dia = ('0' + fecha.getDate()).slice(-2);
-const hora = ('0' + fecha.getHours()).slice(-2);
-const minuto = ('0' + fecha.getMinutes()).slice(-2);
-const segundo = ('0' + fecha.getSeconds()).slice(-2);
-
-// Generar el número de folio
-const numeroFolio = `${anio}${mes}${dia}${hora}${minuto}${segundo}`;
-
-// Mostrar el número de folio generado en la consola
-console.log(`El número de folio generado es: ${numeroFolio}`);
-  
-  //línea que actualiza el valor del campo de entrada con el número de folio generado
-  document.getElementById("folio").value = numeroFolio;
-</script>
     <div>
       <label for="tipo">Tipo de Movimiento:</label>
       <select id="tipo" name="tipo">
@@ -80,7 +58,6 @@ console.log(`El número de folio generado es: ${numeroFolio}`);
     <option value="sureste-san-cristobal">Sureste - San Cristóbal de las Casas, Chiapas</option>
   </select>
 </div>
-
     <div>
       <label for="inventario">Número de inventario:</label>
       <input type="text" id="inventario" name="inventario" required placeholder="Ingrese aquí el número de inventario del activo">
@@ -140,67 +117,7 @@ console.log(`El número de folio generado es: ${numeroFolio}`);
       <input type="submit" value="Registrar Movimiento">
     </div>
   </form>
-  <script>
-    // Aquí va tu código JavaScript
-    function validarFormulario() {
-  var folio = document.getElementById("folio").value;
-  var fecha = document.getElementById("fecha").value;
-  var hora = document.getElementById("hora").value;
-  var inventario = document.getElementById("inventario").value;
-  var solicitante = document.getElementById("solicitante").value;
-  var area_solicitante = document.getElementById("area_solicitante").value;
-  var receptor = document.getElementById("receptor").value;
-  var area_receptor = document.getElementById("area_receptor").value;
-  var autorizado_por = document.getElementById("autorizado_por").value;
-
-  if (folio == "") {
-    alert("Por favor ingrese el número de folio.");
-    return false;
-  }
-
-  if (fecha == "") {
-    alert("Por favor ingrese la fecha.");
-    return false;
-  }
-
-  if (hora == "") {
-    alert("Por favor ingrese la hora.");
-    return false;
-  }
-
-  if (inventario == "") {
-    alert("Por favor ingrese el número de inventario.");
-    return false;
-  }
-
-  if (solicitante == "") {
-    alert("Por favor ingrese el nombre del solicitante.");
-    return false;
-  }
-
-  if (area_solicitante == "") {
-    alert("Por favor ingrese el área de adscripción del solicitante.");
-    return false;
-  }
-
-  if (receptor == "") {
-    alert("Por favor ingrese el nombre del receptor.");
-    return false;
-  }
-
-  if (area_receptor == "") {
-    alert("Por favor ingrese el área de adscripción del receptor.");
-    return false;
-  }
-
-  if (autorizado_por == "") {
-    alert("Por favor ingrese el nombre de la persona que autoriza el traslado.");
-    return false;
-  }
-
-  return true;
-}
-  </script>
  </body>
+  
 </html>
 
