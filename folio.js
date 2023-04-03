@@ -1,4 +1,4 @@
-<script>
+
   // Obtén la referencia al campo de texto donde mostrarás el número de folio
 const folio = document.getElementById('folio');
 
@@ -17,4 +17,4 @@ const numeroFolio = unidad.substr(0, 2) + day + month + year + hour + minute + s
 
 // Actualiza el valor del campo de texto con el número de folio generado
 folio.value = numeroFolio;
-</script>
+
