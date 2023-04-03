@@ -40,7 +40,7 @@
     </div>
     <div>
   <label for="unidad">Unidad:</label>
-  <select id="unidad" name="unidad">
+  <select id="unidad" name="unidad" onchange="generarFolio()">
     <option value="cdmx-juarez-87">Ciudad de México - Juárez 87</option>
     <option value="cdmx-juarez-222">Ciudad de México - Juárez 222</option>
     <option value="cdmx-ximilpa-39">Ciudad de México - Ximilpa 39</option>
@@ -117,13 +117,12 @@
   </form>
 
   <script>
-    // Obtén la referencia al campo de texto donde mostrarás el número de folio
-    const folio = document.getElementById('folio');
+  // Obtén la referencia al campo de texto donde mostrarás el número de folio
+  const folio = document.getElementById('folio');
 
-    // Obtén la unidad seleccionada en el formulario
+  // Genera un número de folio automático con las iniciales de la unidad, fecha y hora
+  function generarFolio() {
     const unidad = document.getElementById('unidad').value;
-
-    // Genera un número de folio automático con las iniciales de la unidad, fecha y hora
     const date = new Date();
     const day = date.getDate().toString().padStart(2, '0');
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -131,11 +130,13 @@
     const hour = date.getHours().toString().padStart(2, '0');
     const minute = date.getMinutes().toString().padStart(2, '0');
     const second = date.getSeconds().toString().padStart(2, '0');
-    const numeroFolio = unidad.substr(0, 2) + day + month + year + hour + minute + second;
-
-    // Actualiza el valor del campo de texto con el número de folio generado
+    const numeroFolio = unidad.substr(0, 5) + day + month + year + hour + minute + second;
     folio.value = numeroFolio;
-  </script>
+  }
+
+  // Genera el número de folio por defecto al cargar la página
+  generarFolio();
+</script>
   
  </body>
   
