@@ -63,17 +63,36 @@ console.log(`El número de folio generado es: ${numeroFolio}`);
       <input type="time" id="hora" name="hora" required>
     </div>
     <div>
-      <label for="unidad">Casa:</label>
-      <select id="unidad" name="unidad">
-        <option value="unidad1">Unidad 1</option>
-        <option value="unidad2">Unidad 2</option>
-        <option value="unidad3">Unidad 3</option>
-        <option value="unidad4">Unidad 4</option>
-        <option value="unidad5">Unidad 5</option>
-        <option value="unidad6">Unidad 6</option>
-        <option value="unidad7">Unidad 7</option>
-      </select>
-    </div>
+  <label for="unidad">Unidad:</label>
+  <select id="unidad" name="unidad" required>
+    <option value="">Selecciona una unidad</option>
+    <optgroup label="Unidad Ciudad de México">
+      <option value="Juárez 87">Juárez 87</option>
+      <option value="Juárez 222">Juárez 222</option>
+      <option value="Ximilpa 39">Ximilpa 39</option>
+      <option value="Casa Chata">Casa Chata</option>
+      <option value="Niño Jesús 251">Niño Jesús 251</option>
+    </optgroup>
+    <optgroup label="Unidad Golfo">
+      <option value="Xalapa">Xalapa</option>
+    </optgroup>
+    <optgroup label="Unidad Pacífico Sur">
+      <option value="Oaxaca">Oaxaca</option>
+    </optgroup>
+    <optgroup label="Unidad Occidente">
+      <option value="Guadalajara">Guadalajara</option>
+    </optgroup>
+    <optgroup label="Unidad Noreste">
+      <option value="Monterrey">Monterrey</option>
+    </optgroup>
+    <optgroup label="Unidad Peninsular">
+      <option value="Mérida">Mérida</option>
+    </optgroup>
+    <optgroup label="Unidad Sureste">
+      <option value="San Cristóbal">San Cristóbal</option>
+    </optgroup>
+  </select>
+</div>
     <div>
       <label for="inventario">Número de inventario:</label>
       <input type="text" id="inventario" name="inventario" required placeholder="Ingrese aquí el número de inventario del activo">
@@ -92,6 +111,7 @@ console.log(`El número de folio generado es: ${numeroFolio}`);
         <option value="mantenimiento">Mantenimiento</option>
         <option value="prestamo">Préstamo</option>
         <option value="traslado">Traslado</option>
+        option value="baja">Baja</option>
         <option value="otro">Otro</option>
       </select>
     </div>
