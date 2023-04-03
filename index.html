@@ -76,11 +76,15 @@ console.log(`El número de folio generado es: ${numeroFolio}`);
     </div>
     <div>
       <label for="inventario">Número de Inventario:</label>
-      <input type="text" id="inventario" name="inventario" required>
+      <input type="text" id="inventario" name="inventario" required placeholder="Ingrese el número de inventario del activo">
+    </div>
+    <div>
+      <label for="serie">Número de serie:</label>
+      <input type="text" id="serie" name="serie" placeholder="Ingrese el número de serie del activo">
     </div>
     <div>
       <label for="descripcion">Descripción:</label>
-      <textarea id="descripcion" name="descripcion" rows="3" cols="30" required></textarea>
+      <textarea id="descripcion" name="descripcion" rows="3" cols="30" required placeholder="Ingrese la descripción del activo"></textarea>
     </div>
     <div>
       <label for="motivo">Motivo:</label>
@@ -93,19 +97,19 @@ console.log(`El número de folio generado es: ${numeroFolio}`);
     </div>
     <div>
       <label for="solicitante">Solicitante:</label>
-      <input type="text" id="solicitante" name="solicitante" required>
+      <input type="text" id="solicitante" name="solicitante" required placeholder="Ingrese el nombre del personal que hace la solicitud">
     </div>
     <div>
       <label for="area_solicitante">Área de Adscripción:</label>
-      <input type="text" id="area_solicitante" name="area_solicitante" required>
+      <input type="text" id="area_solicitante" name="area_solicitante" required placeholder="Ingrese el área de adscripción del personal solicitante">
     </div>
     <div>
-      <label for="receptor">Personal que Recibe:</label>
-      <input type="text" id="receptor" name="receptor" required>
+      <label for="receptor">Recibe:</label>
+      <input type="text" id="receptor" name="receptor" required placeholder="Ingrese el nombre del personal que recibe">
     </div>
     <div>
       <label for="area_receptor">Área de Adscripción:</label>
-      <input type="text" id="area_receptor" name="area_receptor" required>
+      <input type="text" id="area_receptor" name="area_receptor" required placeholder="Ingrese el área de adscripción del personal que recibe">
     </div>
     <div>
       <label for="autorizado_por">Autorizado por:</label>
@@ -122,7 +126,7 @@ console.log(`El número de folio generado es: ${numeroFolio}`);
     </div>
     <div>
       <label for="observaciones">Observaciones:</label>
-      <textarea id="observaciones" name="observaciones" rows="3" cols="30"></textarea>
+      <textarea id="observaciones" name="observaciones" rows="3" cols="30" placeholder="Ingrese cualquier observación adicional"></textarea>
     </div>
     <div>
       <input type="submit" value="Registrar Movimiento">
