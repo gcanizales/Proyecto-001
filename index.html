@@ -26,26 +26,25 @@
       <input type="text" id="folio" name="folio" required>
     </div>
     -->
-    
     <div>
-      <label for="folio">Folio:</label>
-      <input type="text" id="folio" name="folio" value="">
+    <label for="folio">Folio:</label>
+    <input type="text" id="folio" name="folio" value="">
     </div>
 <script>
   // Obtener la fecha y hora actual
-  const fecha = new Date();
-  const anio = fecha.getFullYear().toString().substr(-2);
-  const mes = ('0' + (fecha.getMonth() + 1)).slice(-2);
-  const dia = ('0' + fecha.getDate()).slice(-2);
-  const hora = ('0' + fecha.getHours()).slice(-2);
-  const minuto = ('0' + fecha.getMinutes()).slice(-2);
-  const segundo = ('0' + fecha.getSeconds()).slice(-2);
+const fecha = new Date();
+const anio = fecha.getFullYear().toString().substr(-2);
+const mes = ('0' + (fecha.getMonth() + 1)).slice(-2);
+const dia = ('0' + fecha.getDate()).slice(-2);
+const hora = ('0' + fecha.getHours()).slice(-2);
+const minuto = ('0' + fecha.getMinutes()).slice(-2);
+const segundo = ('0' + fecha.getSeconds()).slice(-2);
 
-  // Generar el número de folio
-  const numeroFolio = `${anio}${mes}${dia}${hora}${minuto}${segundo}`;
+// Generar el número de folio
+const numeroFolio = `${anio}${mes}${dia}${hora}${minuto}${segundo}`;
 
-  // Mostrar el número de folio generado en la consola
-  console.log(`El número de folio generado es: ${numeroFolio}`);
+// Mostrar el número de folio generado en la consola
+console.log(`El número de folio generado es: ${numeroFolio}`);
   
   //línea que actualiza el valor del campo de entrada con el número de folio generado
   document.getElementById("folio").value = numeroFolio;
@@ -109,8 +108,17 @@
       <input type="text" id="area_receptor" name="area_receptor" required>
     </div>
     <div>
-      <label for="autorizado_por">Personal que Autoriza el Traslado:</label>
-      <input type="text" id="autorizado_por" name="autorizado_por" required>
+      <label for="autorizado_por">Autorizado por:</label>
+      <input type="text" id="autorizado_por" name="autorizado_por" required placeholder="Ingrese aquí el nombre del personal que autoriza la entrada o salida del activo">
+    </div>
+    <div class="form-group">
+      <label for="personal_vigilancia">Revisado por:</label>
+      <input type="text" class="form-control" id="personal_vigilancia" name="personal_vigilancia" placeholder="Ingrese aquí el nombre del personal de vigilancia">
+    </div>
+
+    <div class="form-group">
+      <label for="personal_traslado">Trasladado por:</label>
+      <input type="text" class="form-control" id="personal_traslado" name="personal_traslado" placeholder="Ingrese aquí el nombre del personal que realiza el traslado">
     </div>
     <div>
       <label for="observaciones">Observaciones:</label>
@@ -183,3 +191,4 @@
   </script>
  </body>
 </html>
+
