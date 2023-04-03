@@ -57,4 +57,13 @@ input[type="submit"] {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
+/* Estilos personalizados para los campos de fecha, hora y folio */
+
+
+.date-field,
+.time-field,
+.folio {
+ 
+}
 </style>

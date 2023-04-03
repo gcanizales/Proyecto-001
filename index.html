@@ -21,10 +21,22 @@
   <form method="POST" action="registrar_movimiento.php" onsubmit="return validarFormulario()">
   <fieldset>
     <legend>Registro de Movimiento</legend>
+    
     <div>
-    <label for="folio">Folio:</label>
-    <input type="text" id="folio" name="folio" value="" readonly>
+      <div class="date-field">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" readonly>
+      </div>
+      <div class="time-field">
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" readonly>
+      </div>
+      <div class="folio">
+        <label for="folio">Folio:</label>
+        <input type="text" id="folio" name="folio" value="" readonly>
+      </div>
     </div>
+    <!--
     <div>
       <label for="fecha">Fecha:</label>
       <input type="text" id="fecha" name="fecha" value="" readonly>
@@ -32,6 +44,7 @@
       <label for="hora">Hora:</label>
       <input type="time" id="hora" name="hora" required>
     </div>
+    -->
     <div>
       <label for="tipo">Tipo de Movimiento:</label>
       <select id="tipo" name="tipo">
@@ -160,6 +173,8 @@ document.getElementById('unidad').addEventListener('change', generarFolio);
     
   </script>
 
+    
+<!--
   <script>
 // Obtener la fecha actual
 let fecha = new Date();
@@ -175,8 +190,18 @@ let fechaFormateada = `${dia}/${mes}/${anio}`;
 // Asignar la fecha al campo de formulario
 document.getElementById('fecha').value = fechaFormateada;
 </script>
+ --> 
+ <script>
+  // Obtener la fecha y hora actual
+  let fechaActual = new Date();
+  let horaActual = fechaActual.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+  let fechaFormateada = fechaActual.getFullYear() + "-" + ('0' + (fechaActual.getMonth() + 1)).slice(-2) + "-" + ('0' + fechaActual.getDate()).slice(-2);
   
- 
+  // Establecer los valores de fecha y hora en el formulario
+  document.getElementById("fecha").value = fechaFormateada;
+  document.getElementById("hora").value = horaActual;
+</script>
+    
  </body>
   
 </html>
