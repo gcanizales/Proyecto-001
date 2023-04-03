@@ -17,6 +17,7 @@
 
 <body>
   <h1>Sistema de gestión de activos: Control de entrada y salida</h1>
+  <p>Por favor llene este formulario con la información requerida</p>
   <form method="POST" action="registrar_movimiento.php" onsubmit="return validarFormulario()">
   <fieldset>
     <legend>Registro de Movimiento</legend>
@@ -24,19 +25,7 @@
     <label for="folio">Folio:</label>
     <input type="text" id="folio" name="folio" value="" readonly>
     </div>
-    
     <div>
-      <label for="tipo">Tipo de Movimiento:</label>
-      <select id="tipo" name="tipo">
-        <option value="entrada">Entrada</option>
-        <option value="salida">Salida</option>
-      </select>
-    </div>
-    <div>
-      <!--
-      <label for="fecha">Fecha:</label>
-      <input type="date" id="fecha" name="fecha" required>
-      -->
       <label for="fecha">Fecha:</label>
       <input type="text" id="fecha" name="fecha" value="" readonly>
       
@@ -44,8 +33,18 @@
       <input type="time" id="hora" name="hora" required>
     </div>
     <div>
+      <label for="tipo">Tipo de Movimiento:</label>
+      <select id="tipo" name="tipo">
+        <option disabled selected value>Seleccione una opción</option>
+        <option value="entrada">Entrada</option>
+        <option value="salida">Salida</option>
+      </select>
+    </div>
+    
+    <div>
   <label for="unidad">Unidad:</label>
   <select id="unidad" name="unidad" onchange="generarFolio()">
+    <option disabled selected value>Seleccione una sede</option>
     <option value="cdmx-j87">Ciudad de México - Juárez 87</option>
     <option value="cdmx-j222">Ciudad de México - Juárez 222</option>
     <option value="cdmx-ximilpa39">Ciudad de México - Ximilpa 39</option>
