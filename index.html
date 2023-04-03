@@ -41,19 +41,19 @@
     <div>
   <label for="unidad">Unidad:</label>
   <select id="unidad" name="unidad" onchange="generarFolio()">
-    <option value="cdmx-juarez-87">Ciudad de México - Juárez 87</option>
-    <option value="cdmx-juarez-222">Ciudad de México - Juárez 222</option>
-    <option value="cdmx-ximilpa-39">Ciudad de México - Ximilpa 39</option>
-    <option value="cdmx-casa-chata">Ciudad de México - Casa Chata</option>
-    <option value="cdmx-nino-jesus-251">Ciudad de México - Niño Jesús 251</option>
+    <option value="cdmx-j87">Ciudad de México - Juárez 87</option>
+    <option value="cdmx-j222">Ciudad de México - Juárez 222</option>
+    <option value="cdmx-ximilpa39">Ciudad de México - Ximilpa 39</option>
+    <option value="cdmx-casachata">Ciudad de México - Casa Chata</option>
+    <option value="cdmx-nj251">Ciudad de México - Niño Jesús 251</option>
     <option value="golfo-xalapa">Golfo - Xalapa, Veracruz</option>
-    <option value="pacifico-sur-oaxaca">Pacífico Sur - Oaxaca, Oaxaca</option>
+    <option value="pacificosur-oaxaca">Pacífico Sur - Oaxaca, Oaxaca</option>
     <option value="occidente-espana-1359">Occidente - Av. España 1359, Guadalajara, Jalisco</option>
     <option value="occidente-alemania-1626">Occidente - Av. Alemania 1626, Guadalajara, Jalisco</option>
     <option value="occidente-cidiglo">Occidente - CIDIGLO, Zapopan, Jalisco</option>
     <option value="noreste-monterrey">Noreste - Monterrey, Nuevo León</option>
     <option value="peninsular-parque-cientifico">Peninsular - Parque Científico, Mérida, Yucatán</option>
-    <option value="sureste-san-cristobal">Sureste - San Cristóbal de las Casas, Chiapas</option>
+    <option value="sureste-sancristobal">Sureste - San Cristóbal de las Casas, Chiapas</option>
   </select>
 </div>
     <div>
@@ -117,26 +117,42 @@
   </form>
 
   <script>
-  // Obtén la referencia al campo de texto donde mostrarás el número de folio
-  const folio = document.getElementById('folio');
+      // Obtén la referencia al campo de texto donde mostrarás el número de folio
+const folio = document.getElementById('folio');
 
+// Función que genera el número de folio
+function generarFolio() {
+  // Obtén la unidad seleccionada en el formulario
+  const unidad = document.getElementById('unidad').value;
+  
+  // Separa la unidad en sus partes (ciudad, calle y número) usando el guion como separador
+  const partesUnidad = unidad.split('-');
+  
+  // Obtiene la ciudad, la calle y el número de la unidad
+  const ciudad = partesUnidad[0].toUpperCase();
+  const calleNumero = partesUnidad.slice(1).join(' ').toUpperCase();
+  
   // Genera un número de folio automático con las iniciales de la unidad, fecha y hora
-  function generarFolio() {
-    const unidad = document.getElementById('unidad').value;
-    const date = new Date();
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const year = date.getFullYear().toString().substr(-2);
-    const hour = date.getHours().toString().padStart(2, '0');
-    const minute = date.getMinutes().toString().padStart(2, '0');
-    const second = date.getSeconds().toString().padStart(2, '0');
-    const numeroFolio = unidad.substr(0, 5) + day + month + year + hour + minute + second;
-    folio.value = numeroFolio;
-  }
+  const date = new Date();
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const year = date.getFullYear().toString().substr(-2);
+  const hour = date.getHours().toString().padStart(2, '0');
+  const minute = date.getMinutes().toString().padStart(2, '0');
+  const second = date.getSeconds().toString().padStart(2, '0');
+  const numeroFolio = ciudad.substr(0, 4) + calleNumero.substr(0, 5) + day + month + year + hour + minute + second;
 
-  // Genera el número de folio por defecto al cargar la página
-  generarFolio();
-</script>
+  // Actualiza el valor del campo de texto con el número de folio generado
+  folio.value = numeroFolio;
+}
+
+// Llama a la función para generar el número de folio inicial
+generarFolio();
+
+// Agrega un listener al select para que llame a la función cada vez que cambie la unidad seleccionada
+document.getElementById('unidad').addEventListener('change', generarFolio);
+    
+  </script>
   
  </body>
   
