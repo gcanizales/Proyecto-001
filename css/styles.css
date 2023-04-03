@@ -57,13 +57,25 @@ input[type="submit"] {
   font-weight: bold;
   margin-bottom: 10px;
 }
-
+.container {
+  display: flex;
+  align-items: center; /* Para alinear los campos verticalmente */
+}
 /* Estilos personalizados para los campos de fecha, hora y folio */
-
-
 .date-field,
 .time-field,
 .folio {
- 
+flex: 1; /* Para que cada campo ocupe el mismo ancho */
+  text-align: center; /* Para centrar el texto en cada campo */
+  border-right: 1px solid black; /* Para agregar una línea vertical entre cada campo */
+    
 }
+.folio {
+  border-right: none; /* Para quitar la línea vertical a la derecha del tercer campo */
+}
+input[type="date"], input[type="time"] {
+  text-align: center;
+  
+}
+
 </style>
