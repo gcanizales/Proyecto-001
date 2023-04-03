@@ -33,8 +33,13 @@
       </select>
     </div>
     <div>
+      <!--
       <label for="fecha">Fecha:</label>
       <input type="date" id="fecha" name="fecha" required>
+      -->
+      <label for="fecha">Fecha:</label>
+      <input type="text" id="fecha" name="fecha" value="" readonly>
+      
       <label for="hora">Hora:</label>
       <input type="time" id="hora" name="hora" required>
     </div>
@@ -155,6 +160,22 @@ generarFolio();
 document.getElementById('unidad').addEventListener('change', generarFolio);
     
   </script>
+
+  <script>
+// Obtener la fecha actual
+let fecha = new Date();
+
+// Obtener día, mes y año con dos dígitos
+let dia = fecha.getDate().toString().padStart(2, '0');
+let mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
+let anio = fecha.getFullYear();
+
+// Formatear la fecha
+let fechaFormateada = `${dia}/${mes}/${anio}`;
+
+// Asignar la fecha al campo de formulario
+document.getElementById('fecha').value = fechaFormateada;
+</script>
   
  
  </body>
