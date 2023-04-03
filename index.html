@@ -147,7 +147,7 @@ function generarFolio() {
   const hour = date.getHours().toString().padStart(2, '0');
   const minute = date.getMinutes().toString().padStart(2, '0');
   const second = date.getSeconds().toString().padStart(2, '0');
-  const numeroFolio = ciudad.substr(0, 4) + calleNumero.substr(0, 5) + day + month + year + hour + minute + second;
+  const numeroFolio = ciudad.substr(0, 4) + "-" + calleNumero.substr(0, 5) + "-" + day + month + year + "-" + hour + minute + second;
 
   // Actualiza el valor del campo de texto con el número de folio generado
   folio.value = numeroFolio;
