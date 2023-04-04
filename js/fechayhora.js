@@ -1,9 +1,9 @@
-  // Obtener la fecha y hora actual
+// Obtener la fecha y hora actual
   let fechaActual = new Date();
   let horaActual = fechaActual.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
   let fechaFormateada = fechaActual.getFullYear() + "-" + ('0' + (fechaActual.getMonth() + 1)).slice(-2) + "-" + ('0' + fechaActual.getDate()).slice(-2);
   
-  // Establecer los valores de fecha y hora en el formulario
+// Establecer los valores de fecha y hora en el formulario
   document.getElementById("fecha").value = fechaFormateada;
   document.getElementById("hora").value = horaActual;
 
