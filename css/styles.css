@@ -67,15 +67,16 @@ input[type="submit"] {
 .folio {
 flex: 1; /* Para que cada campo ocupe el mismo ancho */
   text-align: center; /* Para centrar el texto en cada campo */
-  border-right: 1px solid black; /* Para agregar una línea vertical entre cada campo */
+  border-right: 2px solid transparent; /* Para agregar una línea vertical entre cada campo */  
     
 }
 .folio {
   border-right: none; /* Para quitar la línea vertical a la derecha del tercer campo */
+  
 }
 input[type="date"], input[type="time"] {
   text-align: center;
-  
+  font-family: Arial, sans-serif;
 }
 
 </style>
