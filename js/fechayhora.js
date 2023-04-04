@@ -1,11 +1,16 @@
 // Obtener la fecha y hora actual
+  function actualizarHora() {
   let fechaActual = new Date();
-  let horaActual = fechaActual.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-  let fechaFormateada = fechaActual.getFullYear() + "-" + ('0' + (fechaActual.getMonth() + 1)).slice(-2) + "-" + ('0' + fechaActual.getDate()).slice(-2);
+  let horaActual = fechaActual.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', second: '2-digit'});
   
-// Establecer los valores de fecha y hora en el formulario
-  document.getElementById("fecha").value = fechaFormateada;
+  // Establecer los valores de fecha y hora en el formulario
+  document.getElementById("fecha").value = fechaActual.toISOString().slice(0,10);
   document.getElementById("hora").value = horaActual;
+}
+
+// Ejecuta la función actualizarHora cada segundo
+setInterval(actualizarHora, 1000);
+
 
   // Obtener la fecha actual
       //let fecha = new Date();
